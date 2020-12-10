@@ -1,0 +1,46 @@
+@import './variables';
+@import './functions';
+
+body {
+    @include color($leaf_color);/*include används för att säga att detta blocket ska använda en variabel*/
+}
+
+.test {
+    @include change_font_size($super_large);
+    @include fonten_for_text($fonten);
+    @include text_color($textcolor);
+    margin-top: 150px;
+    margin-left: 40px;
+}
+
+.bal {
+  margin-top: 20px;
+  margin-left: 40px;
+  p {
+    @include fonten_for_text($fonten);
+    @include test_size($quiteSmall);
+    }
+}
+
+nav {
+    overflow: hidden;
+    background-color: $textcolor;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    ul {
+      text-align: center;
+      padding: 15px;
+      li {
+        display: inline;
+        font-size: 35px;
+        a {
+          color: $light;
+          padding: 15px;
+          &:hover {
+            background-color: $leaf_color;
+          }
+        }
+      }
+    }
+  }

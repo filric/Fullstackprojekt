@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*istället för att ändra färger och storlekar i master dokumentet används variabler så man enkelt kan byta*/
+/*istället för att ändra färger och storlekar i master dokumentet används variabler så man enkelt kan byta*/
+/*importerar variabler så man kan använda dem i detta dokumentet*/
+/*mixin låter dig definiera stilar som kan återanvändas i din css*/
+body {
+  background-color: lightgreen;
+  /*include används för att säga att detta blocket ska använda en variabel*/
+}
+
+.test {
+  font-size: 50px;
+  font-family: "comic sans ms";
+  color: black;
+  margin-top: 150px;
+  margin-left: 40px;
+}
+
+.bal {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.bal p {
+  font-family: "comic sans ms";
+  font-size: 25px;
+}
+
+nav {
+  overflow: hidden;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav ul {
+  text-align: center;
+  padding: 15px;
+}
+
+nav ul li {
+  display: inline;
+  font-size: 35px;
+}
+
+nav ul li a {
+  color: white;
+  padding: 15px;
+}
+
+nav ul li a:hover {
+  background-color: lightgreen;
+}
+/*# sourceMappingURL=master.css.map */

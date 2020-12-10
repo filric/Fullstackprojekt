@@ -1,0 +1,21 @@
+@import "./variables";/*importerar variabler så man kan använda dem i detta dokumentet*/
+
+
+/*mixin låter dig definiera stilar som kan återanvändas i din css*/
+@mixin color($color){
+    background-color: $color;
+} 
+
+@mixin change_font_size($font) {
+    font-size: $font;
+}
+
+@mixin fonten_for_text($fonten){
+    font-family: $fonten;
+}
+@mixin text_color($textcolor){
+    color: $textcolor;
+}
+@mixin test_size($quiteSmall) {
+    font-size: $quiteSmall;
+}
