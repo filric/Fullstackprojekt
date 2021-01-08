@@ -10,7 +10,7 @@ const app = express()
 const port = 3000
 
 //Sökväg till sökväg till en mapp för alla statiska sidor och sätt den som default sökväg.
-const staticDir = __dirname + '\\client\\'
+const staticDir = __dirname + "\\client\\"
 app.use(express.static(staticDir))
 
 //Sätt upp servern så att den kan tyda json och urlencoded
@@ -23,7 +23,7 @@ app.set('view engine' , 'ejs')
 //Lyssnar på GET requests på addressen <domain>/
 app.get('/', (req, res) => {
     //rendera sidan index.ejs
-  res.render('index.ejs', { test: " Ludde"})
+res.render('./index.ejs', { test: " Ludde"})
 })
 
 //Lyssnar på POST requests på addressen <domain>/
@@ -36,6 +36,8 @@ app.post('/', function (req, res) {
     //Omdirigera klienten till huvudsidan
     res.redirect('/')
 })
+app.get('/login', (req, res) => {
+res.render('./login.ejs')
+})
 
-//Sätt igång servern så att den kan ta emot requests på vald port.
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
