@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="sv" dir="ltr">
+
 <head>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./master.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leaf color</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./master.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaf color</title>
 </head>
 
 <body>
-    <div class="template"></div>
-    
-    <div id="navigation-bar">
-        <nav>
-          <ul>
-            <li><a href='/'>Home</a></li>
-            <li><a href='/login'>Login</a></li>
-          </ul>
-        </nav>
-      </div>
-    
-    <div class="test"> Detta är en heading </div>
-    <div class="bal"><p>Detta är lite brödtext bara för att använda som exempel</p></div>
-    <% for( let index = 0; index < 5; index++ ) { %>
-    <p><%= test %> </p>
+  <div class="template"></div>
+
+  <div id="navigation-bar">
+    <nav>
+      <ul>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/login'>Login</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="test"> Detta är en heading </div>
+  <div class="bal">
+    <p>Detta är lite brödtext bara för att använda som exempel</p>
+  </div>
+  <% for( let index=0; index < 5; index++ ) { %>
+    <p>
+      <%= test %>
+    </p>
     <% } %>
 
 </body>
+
 </html>

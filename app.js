@@ -18,12 +18,12 @@ app.use(express.json())
 app.use(express.urlencoded())
 
 //Ställ in EJS som vymotor för servern. 
-app.set('view engine' , 'ejs')
+app.set('view engine', 'ejs')
 
 //Lyssnar på GET requests på addressen <domain>/
 app.get('/', (req, res) => {
     //rendera sidan index.ejs
-res.render('./index.ejs', { test: " Ludde"})
+    res.render('./index.ejs', { test: " Ludde" })
 })
 
 //Lyssnar på POST requests på addressen <domain>/
@@ -37,7 +37,7 @@ app.post('/', function (req, res) {
     res.redirect('/')
 })
 app.get('/login', (req, res) => {
-res.render('./login.ejs')
+    res.render('./login.ejs')
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
