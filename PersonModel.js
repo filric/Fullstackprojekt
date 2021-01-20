@@ -1,20 +1,24 @@
 const mongoose = require('mongoose');
 
 const personSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    age: Number
+    username: String,
+    password: String
 });
 
 const Person = mongoose.model('Person', personSchema);
 
 
-exports.createPerson = (name, email, age) => {
+exports.createPerson = (username, password) => {
     var person = new Person({
-        name: name,
-        email: email,
-        age: age
+        username: username,
+        password: password
     })
 
     return person
+}
+exports.getAllInfo = async () =>{
+    let infoList = await Person.find({
+
+    })
+    return infoList
 }

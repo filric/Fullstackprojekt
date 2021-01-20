@@ -3,7 +3,7 @@ const express = require('express')
 //Inkludera dbModule.js
 const dbModule = require('./dBModule')
 //Inkludera MessageModel för att kunna spara meddelanden i databasen 
-const MessageModel = require('./MessageModel')
+const PersonModel = require('./PersonModel')
 //Gör en instans klassen express
 const app = express()
 //Ange porten som servern kommer att lyssna på.
@@ -23,21 +23,23 @@ app.set('view engine', 'ejs')
 //Lyssnar på GET requests på addressen <domain>/
 app.get('/', (req, res) => {
     //rendera sidan index.ejs
-    res.render('./index.ejs', { test: " Ludde" })
+    res.render('./login.ejs')
 })
 
 //Lyssnar på POST requests på addressen <domain>/
-app.post('/', function (req, res) {
+app.post('/login', async function (req, res) {
     //Skapa ett Message objekt
-    const message = MessageModel.createMessage(req.body.email, req.body.message)
+    const person = await PersonModel.createPerson(req.body.username, req.body.password)
     //spara elementet Message i databasen
-    dbModule.storeElement(message)
+    dbModule.storeElement(person)
 
     //Omdirigera klienten till huvudsidan
-    res.redirect('/')
+    res.render('./index.ejs')
 })
-app.get('/login', (req, res) => {
-    res.render('./login.ejs')
+app.get('/index', async (req, res) => {
+    let infoList = await PersonModel.getAllInfo();
+    res.render('./index.ejs', {info: infoList})
+
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

@@ -16,19 +16,21 @@
   <div id="navigation-bar">
     <nav>
       <ul>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/login'>Login</a></li>
+        <li><a href='/index'>Home</a></li>
+        <li><a href='/'>Login</a></li>
       </ul>
     </nav>
   </div>
 
-  <div class="test"> Detta är en heading </div>
   <div class="bal">
-    <p>Detta är lite brödtext bara för att använda som exempel</p>
+    <p>Användarnamn & lösenord</p>
   </div>
-  <% for( let index=0; index < 5; index++ ) { %>
+  <% for( let index=0; index < info.length; index++ ) { %>
     <p>
-      <%= test %>
+      <%= info[index].username %>
+    </p>
+    <p>
+      <%= info[index].password %>
     </p>
     <% } %>
 
