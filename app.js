@@ -34,7 +34,7 @@ app.post('/login', async function (req, res) {
     dbModule.storeElement(person)
 
     //Omdirigera klienten till huvudsidan
-    res.render('./index.ejs')
+    res.redirect('/index')
 })
 app.get('/index', async (req, res) => {
     let infoList = await PersonModel.getAllInfo();

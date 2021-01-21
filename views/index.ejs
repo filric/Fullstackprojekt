@@ -26,12 +26,14 @@
     <p>Användarnamn & lösenord</p>
   </div>
   <% for( let index=0; index < info.length; index++ ) { %>
+    <div class="userbox">
     <p>
       <%= info[index].username %>
     </p>
     <p>
       <%= info[index].password %>
     </p>
+  </div>
     <% } %>
 
 </body>
